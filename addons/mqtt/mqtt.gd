@@ -28,7 +28,7 @@ var ssl_params = null
 var pid = 0
 var user = null
 var pswd = null
-var keepalive = 0
+var keepalive = 1
 var lw_topic = null
 var lw_msg = null
 var lw_qos = 0
@@ -92,6 +92,7 @@ func connect_to_server(clean_session=true):
 	while self.client.get_status() != StreamPeerTCP.STATUS_CONNECTED:
 		pass
 	print("Connected to server")
+	print(client_id)
 	self.client.set_no_delay(true)	
 	# May need a little delay after connecting to the server ?
 	
